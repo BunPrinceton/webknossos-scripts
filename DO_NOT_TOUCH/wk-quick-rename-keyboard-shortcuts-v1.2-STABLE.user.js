@@ -28,11 +28,20 @@
         'e': 11, 'E': 11
     };
 
-    const DEFAULT_KEY_LABELS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'Q', 'W', 'E'];
+    const DEFAULT_KEY_LABELS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'Q', 'W', 'E', '?', '?', '?', '?', '?', '?', '?', '?', '?'];
 
     // Load custom keybinds from localStorage or use defaults
     let KEY_MAP = loadKeybinds() || { ...DEFAULT_KEY_MAP };
     let KEY_LABELS = loadKeyLabels() || [...DEFAULT_KEY_LABELS];
+
+    // Migrate old keybinds: if saved labels are shorter than defaults, extend with '?'
+    if (KEY_LABELS.length < DEFAULT_KEY_LABELS.length) {
+        console.log('[WK Keyboard] Migrating old keybinds:', KEY_LABELS.length, '→', DEFAULT_KEY_LABELS.length);
+        while (KEY_LABELS.length < DEFAULT_KEY_LABELS.length) {
+            KEY_LABELS.push('?');
+        }
+        saveKeybinds(); // Save the extended version
+    }
 
     let menuLabeled = false;
     let rebindingIndex = null; // Which item we're rebinding
@@ -265,6 +274,6 @@
         }
     }, true); // TRUE = capture phase (runs before WebKnossos handlers)
 
-    console.log('[WK Keyboard Shortcuts] Ready - Press 1-9, Q, W, E when menu is open');
+    console.log('[WK Keyboard Shortcuts] Ready - 21 labels available (12 bound by default)');
     console.log('[WK Keyboard Shortcuts] RIGHT-CLICK keyboard hints to rebind keys!');
 })();

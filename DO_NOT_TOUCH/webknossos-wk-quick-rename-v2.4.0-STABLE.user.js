@@ -35,7 +35,16 @@
         { id: 'fat-globule', label: 'Fat Globule', emoji: '🍔' },
         { id: 'tear', label: 'Tear', emoji: '💔' },
         { id: 'merge', label: 'Merge Between Classes', emoji: '🔀' },
-        { id: 'uncertain', label: 'Uncertain', emoji: '❓' }
+        { id: 'uncertain', label: 'Uncertain', emoji: '❓' },
+        { id: 'mitochondria', label: 'Mitochondria', emoji: '🔋' },
+        { id: 'myelin-inner-tongue', label: 'Myelin Inner Tongue', emoji: '🌀' },
+        { id: 'myelin-outer-tongue', label: 'Myelin Outer Tongue', emoji: '🌊' },
+        { id: 'fold', label: 'Fold', emoji: '📐' },
+        { id: 'cracks', label: 'Cracks', emoji: '💥' },
+        { id: 'missing-data-full', label: 'Missing Data Full', emoji: '⬛' },
+        { id: 'missing-data-partial', label: 'Missing Data Partial', emoji: '◻️' },
+        { id: 'unknown', label: 'Unknown', emoji: '❔' },
+        { id: 'merge-between-errors', label: 'Merge Between Errors', emoji: '🔴' }
     ];
 
     let contextMenu = null;
